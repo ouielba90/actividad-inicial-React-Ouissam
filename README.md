@@ -1,27 +1,46 @@
-# ⚛️ React Product Catalog – Initial Setup  
+# ⚛️ React Product Catalog – Initial Setup
 
-## 🧭 Description  
-- Created the base structure of the React + Vite project.  
-- Removed the default example files.  
-- Added empty component files: `Header`, `Products`, `Product`, `Footer`.  
-- Added a `data.jsx` file for the product dataset.  
-- Project compiles successfully and is ready for development.  
+## 🧭 Description
+
+- Completed Phase 1 – Initial Activity with product list.
+- Built the base structure of a React + Vite project using components and initial styles.
+- Implemented a static MVP rendering product cards from a local dataset with at least 10 products.
+- Followed best practices: semantic tags (header, main, section, footer), descriptive alt text for images, and stable keys when mapping arrays.
+- Project compiles successfully and is ready for development.
 
 ---
 
-## 📂 Project Structure  
-Actividad-inicial-React-Ouissam/
-├─ public/
-├─ src/
-│ ├─ components/
-│ │ ├─ Header.jsx
-│ │ ├─ Products.jsx
-│ │ ├─ Product.jsx
-│ │ └─ Footer.jsx
-│ ├─ data/
-│ │ └─ data.jsx
-│ ├─ App.jsx
-│ ├─ main.jsx
-│ └─ index.css
-├─ index.html
-└─ README.md
+## 📂 Project Structure
+
+`````text
+initial-activity/
+  index.html
+  data/
+    data.jsx       # dataset with ~10 products
+  src/
+    App.jsx        # composition of Header, Products, Footer
+    index.css      # shared stylesheet
+    main.jsx       # React + Vite bootstrap
+    components/
+      Header.jsx
+      Products.jsx  # maps dataset to <Product />
+      Product.jsx   # product card
+      Footer.jsx
+  public/           # optional static files
+  README.md````
+
+---
+
+## 🔹 Phase 1 – What I Did
+- Set up the base React + Vite project structure.
+- Created the main components: Header, Products, Product, Footer.
+- Added a local dataset with ~10 products.
+- Rendered product cards dynamically from the dataset using JSX and props.
+- Styled the project with a consistent external CSS file (`index.css`) using Flexbox for layout.
+- Ensured semantic HTML (header, main, section, footer) and accessibility (descriptive alt text, clear heading hierarchy).
+- Verified no console warnings or errors.
+
+---
+
+
+`````
