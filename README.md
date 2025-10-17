@@ -1,6 +1,6 @@
-# ⚛️ React Product Catalog – Initial Setup
+# React Product Catalog – Initial Setup
 
-## 🧭 Description
+## Description
 
 - Completed Phase 1 – Initial Activity with product list.
 - Built the base structure of a React + Vite project using components and initial styles.
@@ -10,9 +10,9 @@
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-`````text
+```text
 initial-activity/
   index.html
   data/
@@ -27,11 +27,13 @@ initial-activity/
       Product.jsx   # product card
       Footer.jsx
   public/           # optional static files
-  README.md````
+  README.md
+```
 
 ---
 
-## 🔹 Phase 1 – What I Did
+## Phase 1 – What I Did
+
 - Set up the base React + Vite project structure.
 - Created the main components: Header, Products, Product, Footer.
 - Added a local dataset with ~10 products.
@@ -42,5 +44,6 @@ initial-activity/
 
 ---
 
+```
 
-`````
+```
