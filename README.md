@@ -44,6 +44,13 @@ initial-activity/
 
 ---
 
-```
+## Phase 2.1 – What I Did
 
-```
+* Implemented a floating shopping cart button 🛒.
+* Added `ShoppingCart.jsx` component with a pop-up panel.
+* Used `useState` to control visibility of the cart (`showCart` state).
+* Pop-up can be opened/closed using the floating button and a ❌ close button inside the cart.
+* Ensured smooth show/hide transitions with conditional rendering in JSX.
+* Verified design is clean, coherent, and functional with no console errors or warnings.
+
+---

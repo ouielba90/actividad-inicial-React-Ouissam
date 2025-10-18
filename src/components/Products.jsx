@@ -8,7 +8,6 @@ function Products() {
     <div className="products">
       {products.map((product) => {
         return <Product key={product.id} name={product.name} category={product.category} description={product.description} price={product.price} image={product.image} />
-
       })}
     </div>
   )
