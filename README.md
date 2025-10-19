@@ -54,3 +54,15 @@ initial-activity/
 * Verified design is clean, coherent, and functional with no console errors or warnings.
 
 ---
+
+## Phase 2.2 – What I Did
+
+- Added “Add to Cart” buttons to each product card.  
+- Created the `addToShoppingCart(product)` function to update state in the parent component (`Products.jsx`).  
+- Managed the shopping cart state with `useState`.  
+- Passed the shopping cart items as props to the `ShoppingCart` component.  
+- Rendered the cart dynamically using `map` to display added products in real time.  
+- Ensured that the cart updates without duplicating the structure and the user experience is smooth.  
+- Verified the feature works correctly with no console warnings or errors.
+
+---

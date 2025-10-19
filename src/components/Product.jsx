@@ -1,4 +1,4 @@
-function Product({ id, name, category, description, price, image }) {
+function Product({ id, name, category, description, price, image, onShoppingCart }) {
   let alt_image = image.replace(".jpg", "");
   alt_image = `${alt_image} image`
   image = "../../public/images/" + image
@@ -11,6 +11,7 @@ function Product({ id, name, category, description, price, image }) {
         <p><b>Category: </b>{category}</p>
         <p><b>Description: </b>{description}</p>
         <p><b>Price: </b>{price}€</p></div>
+      <button className="addItemToCard-Btn" onClick={() => onShoppingCart({ id, name, price })}>Add to cart</button>
     </div>
   )
 }

@@ -1,14 +1,27 @@
 import Product from "./Product.jsx"
-import "./../../data/data.jsx"
+import ShoppingCart from "./ShoppingCart.jsx"
 import { products } from "./../../data/data.jsx"
+import { useState } from "react"
 
 function Products() {
-  //console.log(products)
+  let [shoppingCartList, setshoppingCartList] = useState([])
+
+  function addToShoppingCart(product) {
+    console.log("S", shoppingCartList)
+    console.log("P", product)
+    if (shoppingCartList.some(item => item.id === product.id)) {
+      alert("The item was already added!")
+    } else {
+      setshoppingCartList(shoppingCartList.concat(product))
+    }
+  }
   return (
     <div className="products">
       {products.map((product) => {
-        return <Product key={product.id} name={product.name} category={product.category} description={product.description} price={product.price} image={product.image} />
+        console.log(shoppingCartList)
+        return <Product key={product.id} id={product.id} name={product.name} category={product.category} description={product.description} price={product.price} image={product.image} onShoppingCart={addToShoppingCart} />
       })}
+      <ShoppingCart cartList={shoppingCartList}></ShoppingCart>
     </div>
   )
 }
