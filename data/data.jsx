@@ -5,7 +5,7 @@ export const products = [
     category: "Hardware",
     description: "Complete kit for penetration testing and ethical hacking.",
     price: 120,
-    image: "raspberry-pi-kit.jpg"
+    image: "raspberry-pi-kit.jpeg"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const products = [
     category: "Book",
     description: "Step-by-step manual to learn ethical hacking from scratch.",
     price: 25,
-    image: "hacking-guide.jpg"
+    image: "hacking-guide.jpeg"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const products = [
     category: "Hardware",
     description: "Advanced Wi-Fi card for auditing wireless networks.",
     price: 40,
-    image: "alfa-wifi.jpg"
+    image: "alfa-wifi.jpeg"
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const products = [
     category: "Software",
     description: "Access to a platform with challenges and hacking simulations.",
     price: 60,
-    image: "cyber-course.jpg"
+    image: "cyber-course.jpeg"
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const products = [
     category: "Hardware",
     description: "USB tool for security testing and ethical hacking simulations.",
     price: 35,
-    image: "usb-hacker.jpg"
+    image: "usb-hacker.jpeg"
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const products = [
     category: "Accessory",
     description: "Fun hacker-themed T-shirt with cybersecurity memes.",
     price: 15,
-    image: "cybergeek-shirt.jpg"
+    image: "cybergeek-shirt.jpeg"
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ export const products = [
     category: "Hardware",
     description: "Cards with security challenges to practice ethical hacking.",
     price: 50,
-    image: "ctf-kit.jpg"
+    image: "ctf-kit.jpeg"
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ export const products = [
     category: "Hardware",
     description: "Physical device for authentication and digital protection.",
     price: 70,
-    image: "security-key.jpg"
+    image: "security-key.jpeg"
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ export const products = [
     category: "Hardware",
     description: "Compact device for auditing networks anywhere.",
     price: 90,
-    image: "network-analyzer.jpg"
+    image: "network-analyzer.jpeg"
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ export const products = [
     category: "Accessory",
     description: "Mystery box with gadgets and educational hacking tools.",
     price: 55,
-    image: "hacker-box.jpg"
+    image: "hacker-box.jpeg"
   },
   {
     id: 11,
@@ -85,7 +85,7 @@ export const products = [
     category: "Hardware",
     description: "Enhance wireless coverage for testing large networks.",
     price: 30,
-    image: "wifi-booster.jpg"
+    image: "wifi-booster.jpeg"
   },
   {
     id: 12,
@@ -93,7 +93,7 @@ export const products = [
     category: "Accessory",
     description: "Posters with tips, diagrams, and hacker references.",
     price: 10,
-    image: "poster-set.jpg"
+    image: "poster-set.jpeg"
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ export const products = [
     category: "Software",
     description: "Tools to encrypt files, emails, and secure data transfer.",
     price: 75,
-    image: "encryption-software.jpg"
+    image: "encryption-software.jpeg"
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ export const products = [
     category: "Accessory",
     description: "Fun challenge cards to learn hacking concepts interactively.",
     price: 20,
-    image: "puzzle-cards.jpg"
+    image: "puzzle-cards.jpeg"
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ export const products = [
     category: "Hardware",
     description: "DIY security camera kit for network and physical monitoring.",
     price: 85,
-    image: "pi-camera.jpg"
+    image: "pi-camera.jpeg"
   },
   {
     id: 16,
@@ -125,7 +125,7 @@ export const products = [
     category: "Accessory",
     description: "Comfortable hoodie with hacker-themed design.",
     price: 30,
-    image: "hacker-hoodie.jpg"
+    image: "hacker-hoodie.jpeg"
   },
   {
     id: 17,
@@ -133,7 +133,7 @@ export const products = [
     category: "Software",
     description: "Simulated penetration testing tools for learning network security.",
     price: 65,
-    image: "pentest-software.jpg"
+    image: "pentest-software.jpeg"
   },
   {
     id: 18,
@@ -141,7 +141,7 @@ export const products = [
     category: "Accessory",
     description: "Fun stickers for laptops, notebooks, and devices.",
     price: 8,
-    image: "stickers-pack.jpg"
+    image: "stickers-pack.jpeg"
   },
   {
     id: 19,
@@ -149,7 +149,7 @@ export const products = [
     category: "Hardware",
     description: "Compact kit for ethical hacking and network analysis.",
     price: 95,
-    image: "wireless-kit.jpg"
+    image: "wireless-kit.jpeg"
   },
   {
     id: 20,
@@ -157,7 +157,7 @@ export const products = [
     category: "Hardware",
     description: "Tools to learn digital forensics and incident investigation.",
     price: 110,
-    image: "forensics-kit.jpg"
+    image: "forensics-kit.jpeg"
   }
 ];
 
