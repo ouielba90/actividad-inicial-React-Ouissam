@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div>
-      <Header></Header>
-      <Products></Products>
-      <Footer></Footer>
+      <Header />
+      <Products />
+      <Footer />
     </div>
   )
 }
