@@ -4,21 +4,34 @@ import { products } from "./../../data/data.jsx"
 import { useState } from "react"
 
 function Products() {
-  let [shoppingCartList, setshoppingCartList] = useState([])
+  let [cartItems, setCartItems] = useState([])
+  const [cartIDs, setCartIDs] = useState([]);
 
-  function addToShoppingCart(product) {
-    if (shoppingCartList.some(item => item.id === product.id)) {
-      alert("The item was already added!")
-    } else {
-      setshoppingCartList(prevState => prevState.concat(product))
+  function handleAddToCart(product) {
+    if (!cartIDs.includes(product.id)) {
+      setCartItems(prev => [...prev, product]);
+      setCartIDs(prev => [...prev, product.id]);
     }
+  }
+  function handleRemoveFromCart(productId) {
+    setCartItems(prev => prev.filter(p => p.id !== productId))
+    setCartIDs(prev => prev.filter(id => id !== productId))
   }
   return (
     <div className="products">
       {products.map((product) => {
-        return <Product key={product.id} id={product.id} name={product.name} category={product.category} description={product.description} price={product.price} image={product.image} onShoppingCart={() => addToShoppingCart(product)} />
+        return <Product
+          key={product.id}
+          id={product.id}
+          name={product.name}
+          category={product.category}
+          description={product.description}
+          price={product.price}
+          image={product.image}
+          onAddToCart={() => handleAddToCart(product)}
+          disabledButtonIds={cartIDs} />
       })}
-      <ShoppingCart cartList={shoppingCartList} setcartList={setshoppingCartList}></ShoppingCart>
+      <ShoppingCart cartList={cartItems} setCartList={setCartItems} removeFromCart={handleRemoveFromCart}></ShoppingCart>
     </div>
   )
 }

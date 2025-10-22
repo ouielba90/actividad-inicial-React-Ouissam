@@ -1,4 +1,5 @@
-function Product({ id, name, category, description, price, image, onShoppingCart }) {
+
+function Product({ id, name, category, description, price, image, onAddToCart, disabledButtonIds }) {
   const imagePath = `../../public/images/${image}`;
   const altText = `${image.replace(".jpg", "")} image`;
 
@@ -14,7 +15,8 @@ function Product({ id, name, category, description, price, image, onShoppingCart
       </div>
       <div className="card-footer">
         <p className="price">{price}€</p>
-        <button className="addItemToCard-Btn" onClick={() => onShoppingCart({ id, name, price })}>Add to cart</button>
+        <button className="addItemToCard-Btn" onClick={() => onAddToCart({ id, name, price })} disabled={disabledButtonIds.includes(id)}
+        >Add to cart</button>
       </div>
     </div>
   )
