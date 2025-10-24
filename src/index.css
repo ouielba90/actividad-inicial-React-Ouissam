@@ -281,3 +281,44 @@ body {
   background-color: #fee2e2;
   transform: scale(1.1);
 }
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 50px 0 30px 0;
+  background-color: #f9fafb;
+}
+
+.search-bar input {
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  border: 1.5px solid #d1d5db;
+  border-radius: 999px; /* pill shape */
+  padding: 0 20px 0 20px;
+  outline: none;
+  color: #111827;
+  background: white;
+  transition:
+    width 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.search-bar input::placeholder {
+  color: #9ca3af;
+}
+
+.search-bar input:focus {
+  width: 275px;
+  font-size: 16px;
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+}
+
+.search-bar label {
+  font-size: 30px;
+  color: #6b7280;
+}
