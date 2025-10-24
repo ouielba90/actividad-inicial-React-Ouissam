@@ -10,12 +10,16 @@ function Products() {
   function handleAddToCart(product) {
     if (!cartIDs.includes(product.id)) {
       setCartItems(prev => [...prev, product]);
+      //setCartItems([...cartItems, product]);
       setCartIDs(prev => [...prev, product.id]);
+      //setCartIDs([...cartIDs, product.id]);
     }
   }
   function handleRemoveFromCart(productId) {
-    setCartItems(prev => prev.filter(p => p.id !== productId))
-    setCartIDs(prev => prev.filter(id => id !== productId))
+    setCartItems(prev => prev.filter(item => item.id !== productId))
+    //setCartItems(cartItems.filter(item => item.id !== productId))
+    setCartIDs(prev => prev.filter(itemId => itemId !== productId))
+    //setCartIDs(cartIDs.filter(itemId => itemId !== productId))
   }
   return (
     <div className="products">

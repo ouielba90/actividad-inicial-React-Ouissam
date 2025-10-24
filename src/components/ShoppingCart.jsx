@@ -17,6 +17,45 @@ function ShoppingCart({ cartList, setCartList, removeFromCart }) {
     </tr>)
   }
 
+  function renderWholeCard() {
+    return (
+      <div className="shopping-cart">
+        <div className="shopping-cart-header">
+          <button onClick={() => setIsCartOpen(false)} className="cross-Btn">&times;</button>
+          <span>Your Cart</span>
+        </div>
+
+        {cartList.length > 0 ? (
+          <>
+            <div className="shopping-cart-items">
+              <table>
+                <thead>
+                  <tr>
+                    <th className="itemTable">Item</th>
+                    <th className="priceHeaderTable">Price</th>
+                    <th className="actionHeaderTable">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cartList.map((item, index) => renderCartItem(item, index))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="shopping-cart-footer">
+              <span>Total</span>
+              <span>{totalPrice}€</span>
+            </div>
+          </>
+        ) : (
+          <div className="shopping-cart-items-empty">
+            Your basket is empty
+          </div>
+        )}
+      </div>
+    )
+  }
+
   function handleRemoveProduct(productId) {
     setCartList(prev => prev.filter(item => item.id !== productId))
     removeFromCart(productId)
@@ -26,42 +65,7 @@ function ShoppingCart({ cartList, setCartList, removeFromCart }) {
     <div>
       <button onClick={() => setIsCartOpen(!isCartOpen)} className="shopping-Btn">🛒</button>
       <div className="items-basket-count">{cartList.length}</div>
-      {isCartOpen ? (
-        <div className="shopping-cart shopping-cart-open">
-          <div className="shopping-cart-header">
-            <span>Your Cart</span>
-            <button onClick={() => setIsCartOpen(false)} className="cross-Btn">&times;</button>
-          </div>
-
-          {cartList.length > 0 ? (
-            <>
-              <div className="shopping-cart-items">
-                <table>
-                  <thead>
-                    <tr>
-                      <th className="itemTable">Item</th>
-                      <th className="priceHeaderTable">Price</th>
-                      <th className="actionHeaderTable">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cartList.map((item, index) => renderCartItem(item, index))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="shopping-cart-footer">
-                <span>Total</span>
-                <span>{totalPrice}€</span>
-              </div>
-            </>
-          ) : (
-            <div className="shopping-cart-items-empty">
-              Your basket is empty
-            </div>
-          )}
-        </div>
-      ) : undefined}
+      {isCartOpen ? (renderWholeCard()) : undefined}
     </div >
   )
 }
