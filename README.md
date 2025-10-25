@@ -77,3 +77,43 @@ initial-activity/
 * Followed React best practices for state updates and stable `key` props when mapping elements.
 * Confirmed that individual item deletion works correctly and the total updates in real time.
 * Added the number of items added to the basket on top of the basket icon.
+
+---
+
+## Phase 3 – Custom Additions (Self-Created)
+
+* **Search Functionality** – Implemented a new `SearchBar.jsx` component that filters products in real time as the user types.
+
+  * Uses `useState` for controlled input.
+  * Filters products by name or description using `.includes()` and case-insensitive matching.
+  * Displays filtered products dynamically in `Products.jsx`.
+
+* **Stock and Availability Management**
+
+  * Added a `stock` property to each product.
+  * “Add to Cart” button disables when the product reaches its stock limit.
+  * Displays context-based messages:
+
+    * 🟥 “Out of stock” when unavailable.
+    * 🟡 “Hurry, only a few left!” when stock ≤ 2.
+
+* **Improved Cart Logic**
+
+  * Refactored `handleAddToCart` to prevent product duplication.
+  * Supports quantity increment instead of re-adding duplicates.
+  * Updated total price and item count dynamically.
+  * Improved immutability and readability of state updates.
+
+* **Enhanced Shopping Cart Experience**
+
+  * Integrated **react-draggable** for a draggable floating cart.
+  * Users can move the cart window freely across the screen.
+  * Improved layout of cart table for better readability.
+
+* **Code Quality & UI Improvements**
+
+  * Added computed image paths and alt text automatically.
+  * Ensured all product components have descriptive alt attributes.
+  * Applied cleaner component structure and removed redundant console logs.
+  * Verified the app renders without warnings or errors.
+

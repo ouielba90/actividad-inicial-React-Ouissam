@@ -1,8 +1,10 @@
 
-function Product({ id, name, category, description, price, image, onAddToCart, disabledButtonIds }) {
+function Product({ id, name, category, description, price, image, onAddToCart, stock, quantity, disabledButtonIds }) {
   const imagePath = `../../public/images/${image}`;
   const altText = `${image.replace(".jpg", "")} image`;
-
+  const isOutOfStock = quantity >= stock;
+  const remaining = stock - quantity;
+  console.log(stock, quantity)
   return (
     <div className="card" key={id}>
       <div className="image-h3">
@@ -15,8 +17,15 @@ function Product({ id, name, category, description, price, image, onAddToCart, d
       </div>
       <div className="card-footer">
         <p className="price">{price}€</p>
-        <button className="addItemToCard-Btn" onClick={() => onAddToCart({ id, name, price })} disabled={disabledButtonIds.includes(id)}
-        >Add to cart</button>
+        <div className="btn-span">
+          <button className="addItemToCard-Btn" onClick={() => onAddToCart({ id, name, price })} disabled={disabledButtonIds.includes(id) && quantity === stock}
+          >Add to cart</button>
+          {isOutOfStock ? (
+            <span className="span-out">Out of stock</span>
+          ) : (remaining <= 2) ? (
+            <span className="span-few">Hurry, only {remaining} left!</span>
+          ) : undefined}
+        </div>
       </div>
     </div>
   )

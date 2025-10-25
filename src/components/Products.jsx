@@ -11,10 +11,19 @@ function Products() {
 
   function handleAddToCart(product) {
     if (!cartIDs.includes(product.id)) {
+      product["qty"] = 1
       setCartItems(prev => [...prev, product]);
       //setCartItems([...cartItems, product]);
       setCartIDs(prev => [...prev, product.id]);
       //setCartIDs([...cartIDs, product.id]);
+    }
+    if (cartIDs.includes(product.id)) {
+      setCartItems(prev => {
+        return prev.map(el => {
+          return el.id === product.id ? { ...el, qty: el.qty + 1 } : el
+        })
+      });
+      //setCartItems([...cartItems, product]);
     }
   }
   function handleRemoveFromCart(productId) {
@@ -24,20 +33,21 @@ function Products() {
     //setCartIDs(cartIDs.filter(itemId => itemId !== productId))
   }
   function handleQuery(query) {
-    console.log(productsOnQuery, query)
-    setProductsOnQuery(products.filter(
-      item =>
-        item.name.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query)
-    )
-    )
+    const lowerQuery = query.toLowerCase();
+    setProductsOnQuery(
+      products.filter(
+        item =>
+          item.name.toLowerCase().includes(lowerQuery) ||
+          item.description.toLowerCase().includes(lowerQuery)
+      )
+    );
   }
   return (
     <>
       <SearchBar queryTransfer={handleQuery} />
       <div className="products">
         {productsOnQuery.map((product) => {
-          // return <Product key={product.id} {...product}/> // Another way
+          // return <Product key={product.id} {...product}/> // Another way if props are the same on both sides
           return <Product
             key={product.id}
             id={product.id}
@@ -46,11 +56,13 @@ function Products() {
             description={product.description}
             price={product.price}
             image={product.image}
+            stock={product.stock}
             onAddToCart={() => handleAddToCart(product)}
             disabledButtonIds={cartIDs}
+            quantity={cartItems.find(item => item.id === product.id)?.qty}
           />
         })}
-        <ShoppingCart cartList={cartItems} setCartList={setCartItems} removeFromCart={handleRemoveFromCart}></ShoppingCart>
+        <ShoppingCart cartList={cartItems} removeFromCart={handleRemoveFromCart}></ShoppingCart>
       </div>
     </>
   )
