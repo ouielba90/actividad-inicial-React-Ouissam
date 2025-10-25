@@ -4,7 +4,7 @@ function Product({ id, name, category, description, price, image, onAddToCart, s
   const altText = `${image.replace(".jpg", "")} image`;
   const isOutOfStock = quantity >= stock;
   const remaining = stock - quantity;
-  console.log(stock, quantity)
+
   return (
     <div className="card" key={id}>
       <div className="image-h3">

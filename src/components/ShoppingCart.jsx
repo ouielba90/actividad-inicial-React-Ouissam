@@ -13,7 +13,7 @@ function ShoppingCart({ cartList, removeFromCart }) {
       <tr key={item.id}>
         <td className="itemTable">{item.name}</td>
         <td className="priceTable">{item.price}€</td>
-        <td className="priceTable">{item.qty}</td>
+        <td className="action-col">{item.qty}</td>
         <td className="priceTable">{item.price * item.qty}€</td>
         <td className="action-col">
           <button className="trash-Btn" onClick={() => handleRemoveProduct(item.id)}>
@@ -40,7 +40,7 @@ function ShoppingCart({ cartList, removeFromCart }) {
                     <tr>
                       <th className="itemTable">Item</th>
                       <th className="priceHeaderTable">Price</th>
-                      <th className="priceHeaderTable">Qty</th>
+                      <th className="actionHeaderTable">Qty</th>
                       <th className="priceHeaderTable">Subtotal</th>
                       <th className="actionHeaderTable"></th>
                     </tr>
