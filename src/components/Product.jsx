@@ -6,24 +6,24 @@ function Product({ id, name, category, description, price, image, onAddToCart, s
   const remaining = stock - quantity;
 
   return (
-    <div className="card" key={id}>
-      <div className="image-h3">
+    <div className="product-card" key={id}>
+      <div className="product-card__media">
         <img src={imagePath} alt={altText} />
         <div><h3>{name}</h3></div>
       </div>
-      <div className="card-text-props">
+      <div className="product-card__details">
         <p><b>Category: </b>{category}</p>
         <p><b>Description: </b>{description}</p>
       </div>
-      <div className="card-footer">
-        <p className="price">{price}€</p>
-        <div className="btn-span">
-          <button className="addItemToCard-Btn" onClick={() => onAddToCart({ id, name, price })} disabled={disabledButtonIds.includes(id) && quantity === stock}
+      <div className="product-card__footer">
+        <p className="product-card__price">{price}€</p>
+        <div className="product-card__actions">
+          <button className="btn--add-to-cart" onClick={() => onAddToCart({ id, name, price })} disabled={disabledButtonIds.includes(id) && quantity === stock}
           >Add to cart</button>
           {isOutOfStock ? (
-            <span className="span-out">Out of stock</span>
+            <span className="stock-status--out">Out of stock</span>
           ) : (remaining <= 2) ? (
-            <span className="span-few">Hurry, only {remaining} left!</span>
+            <span className="stock-status--low">Hurry, only {remaining} left!</span>
           ) : undefined}
         </div>
       </div>

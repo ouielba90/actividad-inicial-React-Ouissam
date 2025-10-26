@@ -9,7 +9,7 @@ function SearchBar({ queryTransfer }) {
     queryTransfer(value);
   }
   return (
-    <div className="search-bar">
+    <div className="search">
       <label htmlFor="search">&#128269;</label>
       <input type="text" id="search" value={query} placeholder="Search..." onChange={handleChange} />
     </div>

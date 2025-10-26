@@ -45,7 +45,7 @@ function Products() {
   return (
     <>
       <SearchBar queryTransfer={handleQuery} />
-      <div className="products">
+      <div className="product-list">
         {productsOnQuery.map((product) => {
           // return <Product key={product.id} {...product}/> // Another way if props are the same on both sides
           return <Product
