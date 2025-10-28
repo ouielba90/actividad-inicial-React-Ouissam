@@ -1,6 +1,6 @@
 
 function Product({ id, name, category, description, price, image, onAddToCart, stock, quantity, disabledButtonIds }) {
-  const imagePath = `../../public/images/${image}`;
+  const imagePath = `/public/images/${image}`;
   const altText = `${image.replace(".jpg", "")} image`;
   const isOutOfStock = quantity >= stock;
   const remaining = stock - quantity;
