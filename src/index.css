@@ -42,7 +42,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  padding: 50px 0 30px 0;
+  padding: 50px 0 0 0;
   background-color: #f9fafb;
 }
 
@@ -78,6 +78,30 @@ body {
 }
 
 /* =========================================================
+   FILTER BAR
+========================================================= */
+.filter {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.filter p {
+  cursor: pointer;
+  border: 1px solid #1976d2;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.fill_filter,
+.filter p:hover {
+  background-color: #bbdefb;
+}
+
+/* =========================================================
    PRODUCTS GRID
 ========================================================= */
 .product-list {
@@ -86,6 +110,13 @@ body {
   justify-content: center;
   padding: 20px;
   gap: 20px;
+}
+
+.no-findings {
+  color: #0d6efd;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
 
 /* =========================================================
@@ -234,7 +265,7 @@ body {
 .cart-toggle-btn {
   position: fixed;
   cursor: pointer;
-  top: 50%;
+  top: 20%;
   right: 29px;
   background-color: #0d6efd;
   color: #fff;
@@ -255,7 +286,7 @@ body {
 
 .cart-item-count {
   position: fixed;
-  top: 49%;
+  top: 19%;
   right: 20px;
   width: 26px;
   height: 26px;
@@ -274,7 +305,7 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 50%;
+  top: 20%;
   right: 3.5%;
   border: 1px solid black;
   width: 360px;

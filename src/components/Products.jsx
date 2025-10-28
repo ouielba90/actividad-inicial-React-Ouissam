@@ -8,6 +8,10 @@ function Products() {
   let [cartItems, setCartItems] = useState([])
   const [cartIDs, setCartIDs] = useState([]);
   const [productsOnQuery, setProductsOnQuery] = useState(products)
+  const [selectedFilter, setSelectedFilter] = useState([]); // <--- ADD THIS
+  const [query, setQuery] = useState("");
+
+
 
   function handleAddToCart(product) {
     if (!cartIDs.includes(product.id)) {
@@ -32,21 +36,41 @@ function Products() {
     setCartIDs(prev => prev.filter(itemId => itemId !== productId))
     //setCartIDs(cartIDs.filter(itemId => itemId !== productId))
   }
-  function handleQuery(query) {
-    const lowerQuery = query.toLowerCase();
-    setProductsOnQuery(
-      products.filter(
-        item =>
-          item.name.toLowerCase().includes(lowerQuery) ||
-          item.description.toLowerCase().includes(lowerQuery)
-      )
-    );
+
+  function filterProducts(currentQuery, currentFilter) {
+    const lowerQuery = currentQuery.toLowerCase();
+    const activeCategory = currentFilter.find(item => item.selected);
+
+    const filtered = products.filter(item => {
+      const matchesQuery =
+        item.name.toLowerCase().includes(lowerQuery) ||
+        item.description.toLowerCase().includes(lowerQuery);
+
+      const matchesCategory = activeCategory
+        ? item.category === activeCategory.category
+        : true;
+
+      return matchesQuery && matchesCategory;
+    });
+
+    setProductsOnQuery(filtered);
   }
+
+  function handleQuery(incomingQuery) {
+    setQuery(incomingQuery);
+    filterProducts(incomingQuery, selectedFilter);
+  }
+
+  function handleSelector(filter) {
+    setSelectedFilter(filter);
+    filterProducts(query, filter);
+  }
+
   return (
     <>
-      <SearchBar queryTransfer={handleQuery} />
+      <SearchBar queryTransfer={handleQuery} selectTransfer={handleSelector} />
       <div className="product-list">
-        {productsOnQuery.map((product) => {
+        {productsOnQuery.length > 0 ? productsOnQuery.map((product) => {
           // return <Product key={product.id} {...product}/> // Another way if props are the same on both sides
           return <Product
             key={product.id}
@@ -61,7 +85,8 @@ function Products() {
             disabledButtonIds={cartIDs}
             quantity={cartItems.find(item => item.id === product.id)?.qty}
           />
-        })}
+        }) : <div className="no-findings">No matches found 😕</div>
+        }
         <ShoppingCart cartList={cartItems} removeFromCart={handleRemoveFromCart}></ShoppingCart>
       </div>
     </>

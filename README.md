@@ -117,3 +117,9 @@ initial-activity/
   * Applied cleaner component structure and removed redundant console logs.
   * Verified the app renders without warnings or errors.
 
+* **Category Filters** – Implemented category-based filtering in addition to the search bar.
+
+  * Users can click on category buttons to filter products by category.
+  * Works in combination with the search bar for multi-criteria filtering.
+  * Active category is highlighted, and products update dynamically based on selection.
+
