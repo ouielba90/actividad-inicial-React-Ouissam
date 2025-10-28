@@ -1,5 +1,5 @@
 import { useState, useRef } from "react"
-import trashBinIcon from "/public/images/trash-bin.png"
+import trashBinIcon from "/images/trash-bin.png"
 import Draggable from "react-draggable";
 
 
