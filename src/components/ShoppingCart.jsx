@@ -25,7 +25,7 @@ function ShoppingCart({ cartList, removeFromCart }) {
 
   function renderWholeCard() {
     return (
-      <Draggable nodeRef={cartRef}>
+      <Draggable nodeRef={cartRef} cancel=".btn--remove-item, .btn--close-cart, table, input">
         <div className="cart" ref={cartRef}>
           <div className="cart__header">
             <button onClick={() => setIsCartOpen(false)} className="btn--close-cart">&times;</button>
