@@ -73,7 +73,10 @@ function ShoppingCart({ cartList, removeFromCart }) {
   return (
     <div>
       <button onClick={() => setIsCartOpen(!isCartOpen)} className="cart-toggle-btn">🛒</button>
-      <div className="cart-item-count">{cartList.reduce((curr, item) => item.qty + curr, 0)}</div>
+      {cartList.length > 0 ? (
+        <div className="cart-item-count">{cartList.reduce((curr, item) => item.qty + curr, 0)}</div>
+      ) : undefined
+      }
       {isCartOpen ? (renderWholeCard()) : undefined}
     </div >
   )
