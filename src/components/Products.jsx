@@ -39,16 +39,23 @@ function Products() {
 
   function filterProducts(currentQuery, currentFilter) {
     const lowerQuery = currentQuery.toLowerCase();
-    const activeCategory = currentFilter.find(item => item.selected);
+
+    const activeCategories = currentFilter
+      .filter(item => item.selected)
+      .map(item => item.category);
 
     const filtered = products.filter(item => {
       const matchesQuery =
         item.name.toLowerCase().includes(lowerQuery) ||
         item.description.toLowerCase().includes(lowerQuery);
 
-      const matchesCategory = activeCategory
-        ? item.category === activeCategory.category
-        : true;
+      let matchesCategory;
+
+      if (activeCategories && activeCategories.length > 0) {
+        matchesCategory = activeCategories.includes(item.category);
+      } else {
+        matchesCategory = true;
+      }
 
       return matchesQuery && matchesCategory;
     });

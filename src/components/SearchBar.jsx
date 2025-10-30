@@ -16,16 +16,20 @@ function SearchBar({ queryTransfer, selectTransfer }) {
     queryTransfer(value);
   }
 
-  function handleFilter(e) {
+  function handleFilters(e) {
     const value = e.target.innerText
-    console.log("handfilter", value)
     const updated = clicked.map((el) => {
       if (el.category === value) {
         return { ...el, selected: !el.selected }
       } else {
-        return { ...el, selected: false }
+        if (!el.selected) {
+          return { ...el, selected: false }
+        } else {
+          return { ...el, selected: true }
+        }
       }
     })
+    console.log(updated)
     setClicked(updated)
     selectTransfer(updated)
   }
@@ -42,12 +46,12 @@ function SearchBar({ queryTransfer, selectTransfer }) {
         <label htmlFor="search">&#128269;</label>
         <input type="text" id="search" value={query} placeholder="Search..." onChange={handleChange} />
       </div>
-      <div className="filter">
-        <p className={checkActiveCategory("Hardware") ? "fill_filter" : ""} onClick={handleFilter}>Hardware </p>
-        <p className={checkActiveCategory("Book") ? "fill_filter" : ""} onClick={handleFilter}>Book</p>
-        <p className={checkActiveCategory("Software") ? "fill_filter" : ""} onClick={handleFilter}>Software</p>
-        <p className={checkActiveCategory("Accessory") ? "fill_filter" : ""} onClick={handleFilter}>Accessory</p>
-        <p className={checkActiveCategory("Collectible") ? "fill_filter" : ""} onClick={handleFilter}>Collectible</p>
+      <div className="filter" onClick={handleFilters}>
+        <p className={checkActiveCategory("Hardware") ? "fill_filter" : ""} >Hardware </p>
+        <p className={checkActiveCategory("Book") ? "fill_filter" : ""} >Book</p>
+        <p className={checkActiveCategory("Software") ? "fill_filter" : ""} >Software</p>
+        <p className={checkActiveCategory("Accessory") ? "fill_filter" : ""} >Accessory</p>
+        <p className={checkActiveCategory("Collectible") ? "fill_filter" : ""} >Collectible</p>
       </div>
     </>
   )
