@@ -13,21 +13,28 @@
 ## Project Structure
 
 ```text
-initial-activity/
-  index.html
-  data/
-    data.jsx       # dataset with different products as objects
-  src/
-    App.jsx        # composition of Header, Products, Footer
-    index.css      # shared stylesheet
-    main.jsx       # React + Vite bootstrap
-    components/
-      Header.jsx
-      Products.jsx  # maps dataset to <Product />
-      Product.jsx   # product card
-      Footer.jsx
-  public/           # optional static files
-  README.md
+react-product-catalog/
+├── data/
+│   └── data.jsx                  # Local dataset with 50+ products (name, price, description, category, stock, image)
+│
+├── index.html                    # Root HTML entry point
+│
+├── public/
+│   └── images/                   # Static product images referenced from data.jsx
+│
+├── README.md                     # Documentation (Phases 1–3 and features overview)
+│
+├── src/
+    ├── App.jsx                   # Root component composing Header, SearchBar, Products, ShoppingCart, Footer
+    ├── components/
+    │   ├── Footer.jsx            # Footer section with semantic HTML
+    │   ├── Header.jsx            # Header section with logo/title
+    │   ├── Product.jsx           # Individual product card (stock, add-to-cart logic)
+    │   ├── Products.jsx          # Maps dataset → <Product />, manages cart and filtering
+    │   ├── SearchBar.jsx         # Real-time product search bar
+    │   └── ShoppingCart.jsx      # Floating draggable cart with total and delete features
+    ├── index.css                 # Global stylesheet (layout, Flexbox, UI transitions)
+    └── main.jsx                  # React + Vite entry point
 ```
 
 ---
